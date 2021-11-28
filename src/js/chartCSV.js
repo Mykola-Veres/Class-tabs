@@ -1,2 +1,0 @@
-import { fetchRequestQuack } from "./fetchQuack";
-
