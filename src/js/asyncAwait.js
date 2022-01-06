@@ -13,10 +13,10 @@ async function makeSmoothie () {
   console.time("began") 
   const elemF =  getFruits("kiwi")
   const elemS =  getFruits("strawberry")
-  console.log(elemF)
-  console.log(elemS)
+  // console.log(elemF)
+  // console.log(elemS)
   const All = await Promise.all([elemF, elemS])
-  console.log(All)
+  // console.log(All)
   console.timeEnd("began")
   return All
 }
@@ -29,3 +29,4 @@ function makeSmoothie2 () {
   
 }
 makeSmoothie2 ()
+

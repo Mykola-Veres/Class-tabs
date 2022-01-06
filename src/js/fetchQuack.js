@@ -2,7 +2,7 @@ import Chart from 'chart.js/auto';
 const ctx = document.getElementById('myChart').getContext('2d');
 // import axios from "axios";
 import papaparse from "papaparse";
-export function fetchRequestQuack () {
+function fetchRequestQuack () {
   const response = fetch("https://api.covidtracking.com/v1/us/daily.csv")
     response.then(responce => responce.text()
     .then(res => {const dataRes = papaparse.parse(res, {header: true}).data;
@@ -16,10 +16,7 @@ export function fetchRequestQuack () {
     acc.positive.push(entry.positive)
     return acc}, {label: [], positive: [] })
   callback(reduceDate)
-  
-
-  }
-    ))}
+}))}
 
 fetchRequestQuack ()
 console.log(ctx)

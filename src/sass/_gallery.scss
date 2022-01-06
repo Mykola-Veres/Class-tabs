@@ -87,3 +87,9 @@ input{
   color: #ffffff;
   margin-left: 10px;
 }
+
+.imgList{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "chart.js": "^3.6.0",
+    "date-fns": "^2.27.0",
     "papaparse": "^5.3.1",
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
@@ -29,7 +30,9 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "firebase": "^9.6.0",
     "notiflix": "^3.2.2",
-    "simplelightbox": "^2.10.1"
+    "simplelightbox": "^2.10.1",
+    "tui-pagination": "^3.4.1"
   }
 }

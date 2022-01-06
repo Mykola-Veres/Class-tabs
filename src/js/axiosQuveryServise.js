@@ -25,3 +25,8 @@ export default class NewApiQuery {
     this.page = 1;
   }
 } 
+
+
+// https://api.themoviedb.org/3/movie/550?api_key=e00a8fe96730262954d4fe74242d0bb1
+
+// API Key: e00a8fe96730262954d4fe74242d0bb1
