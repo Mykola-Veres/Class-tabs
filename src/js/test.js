@@ -209,3 +209,19 @@ console.log("mary", mary)
 
 console.log("nick", nick)
 
+const bob = {
+  name: bob,
+  age: 35,
+  profession: developer,
+}
+const bill = {
+  name: bill,
+  address: house,
+  profession: QA,
+}
+
+const common = Object.assign(bob, bill, {car: mazda})
+
+console.log(common)
+console.log(bob)
+console.log(bill)
