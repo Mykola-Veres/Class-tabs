@@ -31,14 +31,14 @@ const options = {
 const pagination = new Pagination(container, options);
 
 const page = pagination.getCurrentPage()
-console.log("🚀 ~ file: pagination.js ~ line 36 ~ page", page)
+// console.log("🚀 ~ file: pagination.js ~ line 36 ~ page", page)
 
 fetchImg(page)
 .then(({img, count}) => {
-  console.log(img)
+  // console.log(img)
   markupImg (img)
   pagination.reset(count)
-  console.log(count)
+  // console.log(count)
 })
 
 async function fetchImg (page){
@@ -84,7 +84,7 @@ function markupImg (img) {
 imgList.insertAdjacentHTML("beforeend", markup)
 
 const image = document.querySelectorAll('.image-list img');
-  console.log(image);
+  // console.log(image);
   lazyLoad(image);
 
 }
@@ -101,7 +101,7 @@ function lazyLoad(targets) {
   const onEntry = (entries, observer) => {
     entries.forEach( entry => { if(entry.isIntersecting) {
       const image = entry.target;
-      console.log(image)
+      // console.log(image)
       const src = image.dataset.lazy;
       image.src = src;
       observer.unobserve(image);

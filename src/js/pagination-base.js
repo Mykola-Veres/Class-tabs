@@ -28,6 +28,6 @@ function fetchImages(page) {
 }
 
 function renderImages(images) {
-  console.log('RENDER');
-  console.log(images);
+  // console.log('RENDER');
+  // console.log(images);
 }

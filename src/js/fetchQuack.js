@@ -19,7 +19,7 @@ function fetchRequestQuack () {
 }))}
 
 fetchRequestQuack ()
-console.log(ctx)
+// console.log(ctx)
 
 function callback ({label, positive}) {
 const myChart = new Chart(ctx, {
