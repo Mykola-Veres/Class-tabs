@@ -6,3 +6,4 @@
 import "./js/test";
 // import "./js/pagination";
 // import "./js/dataTime"
+// import "./js/promisTestPokemon";

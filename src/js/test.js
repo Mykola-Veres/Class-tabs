@@ -143,6 +143,7 @@ const login = (obj) => {
 }
 login(Log)
 import { async } from "@firebase/util";
+import { is } from "date-fns/locale";
 // console.log("login", Log)
 
 
@@ -311,18 +312,13 @@ async function getPocemon(pokemonUrl) {
 
   (() => {
     const requestListCopy = [...pokemonList];
-
     const getNext = async (requestListCopy) => {
     if(!requestListCopy.length) {return};
-
-    const currentPokemon3 = requestListCopy.slice(0, 3)
-
-    const pokemontoRender = await Promise.all(currentPokemon3.map(url => getPocemon(url)))
-
-    pokemontoRender.forEach(pokemon => markupPocemon(pokemon))
-
-    const next3Pokemon = requestListCopy.slice(3)
-    getNext(next3Pokemon)
+    const currentPokemon3 = requestListCopy.slice(0, 3);
+    const pokemontoRender = await Promise.all(currentPokemon3.map(url => getPocemon(url)));
+    pokemontoRender.forEach(pokemon => markupPocemon(pokemon));
+    const next3Pokemon = requestListCopy.slice(3);
+    getNext(next3Pokemon);
   }
       getNext(requestListCopy)
     })()
@@ -347,26 +343,57 @@ async function getPocemon(pokemonUrl) {
     pokemonElement.append(markup);
   };
 
-function chage (a, b, c) {
-  a = 10;
-  b.item = "current";
-  c = {item: "current"};
-}
-let num = 20;
-let obj1 = {item: "changing"};
-let obj2 = {item: "changing"};
+// function chage (a, b, c) {
+//   a = 10;
+//   b.item = "current";
+//   c = {item: "current"};
+// }
 
-chage(num, obj1, obj2)
+// let num = 20;
+// let obj1 = {item: "changing"};
+// let obj2 = {item: "changing"};
+// chage(num, obj1, obj2)
 
-console.log(num)
-console.log(obj1.item)
-console.log(obj2.item)
-
+// console.log(num)
+// console.log(obj1.item)
+// console.log(obj2.item)
 
 let a = {h: 10};
 let b = a;
 b.h = 55; // link type change both true
 b = {f: 20} // assign new obj not change in another obj
+// console.log(b)
 
-console.log(b)
+
+const chooseOptimalDistance = (t, k, ls) => {
+  // твій код
+  const result = [];
+
+  if(ls.length < k) {return};
+
+  // ls.sort((a, b) => a - b);
+
+  for (let i = 0; index < ls.length - 2; index++) {
+    if(ls[i] > t) {break};
+
+    let j = i + 1;
+
+    let l = ls.length - 1;
+
+    while (j < l) {
+      let sum = ls[i] + ls[j] + ls[l];
+
+      if(sum < t) {result.push([ls[i], ls[j], ls[l]])};
+
+    }
+
+
+  }
+
+  console.log(result)
+  return null;
+}
+
+chooseOptimalDistance(174, 3, [51, 56, 58, 59, 61]); //173
+chooseOptimalDistance(163, 3, [50]); // null
 
